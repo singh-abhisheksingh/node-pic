@@ -83,7 +83,7 @@ window.onload = function(){
 
     setHomie() {
       const request = new XMLHttpRequest();
-      request.open("GET", "https://boiling-hamlet-18186.herokuapp.com/");
+      request.open("GET", "https://boiling-hamlet-18186.herokuapp.com/api");
       request.onload = () => {
         const src = JSON.parse(request.response).message;
         const img = document.createElement("img");

@@ -15,7 +15,7 @@ app.use(function(req,res,next){
 app.use(express.static('public'))
 const dir = __dirname + '/public/images'
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   randomFile(dir, (err, file) => {
     if (err){
       res.send('404 Error, page not found.')
@@ -27,6 +27,10 @@ app.get('/', (req, res) => {
       });
     }
   });
+});
+
+app.get('/', (req, res) => {
+  res.render('index.html');
 });
 
 app.listen(port, () => {
